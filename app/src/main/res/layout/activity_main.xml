@@ -40,7 +40,7 @@
                     android:textStyle="bold"
                     android:gravity="center"
                     android:letterSpacing="0.08"
-                    android:fontFeature="tnum"
+
                     android:layout_marginBottom="8dp" />
 
                 <EditText
@@ -64,16 +64,16 @@
                     android:gravity="center"
                     android:orientation="horizontal">
                     <Button android:id="@+id/btnStart" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="شروع" android:backgroundTint="#10b981" android:textColor="white"
+                        android:text="شروع" android:backgroundTint="#10b981" android:textColor="@android:color/white"
                         android:textSize="14sp" android:fontFamily="sans-serif" android:layout_margin="4dp" />
                     <Button android:id="@+id/btnPause" android:layout_width="wrap_content" android:layout_height="48dp"
                         android:text="توقف" android:backgroundTint="#f59e0b" android:textColor="#1a1a2e"
                         android:textSize="14sp" android:fontFamily="sans-serif" android:layout_margin="4dp" />
                     <Button android:id="@+id/btnStop" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="پایان" android:backgroundTint="#ef4444" android:textColor="white"
+                        android:text="پایان" android:backgroundTint="#ef4444" android:textColor="@android:color/white"
                         android:textSize="14sp" android:fontFamily="sans-serif" android:layout_margin="4dp" />
                     <Button android:id="@+id/btnReset" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="Reset" android:backgroundTint="#6b7280" android:textColor="white"
+                        android:text="Reset" android:backgroundTint="#6b7280" android:textColor="@android:color/white"
                         android:textSize="14sp" android:fontFamily="sans-serif" android:layout_margin="4dp" />
                 </LinearLayout>
 
@@ -111,7 +111,7 @@
                 <Spinner android:id="@+id/taskPriority" android:layout_width="90dp" android:layout_height="48dp"
                     android:background="#252542" android:padding="4dp" android:layout_marginHorizontal="6dp" />
                 <Button android:id="@+id/btnAddTask" android:layout_width="wrap_content" android:layout_height="48dp"
-                    android:text="➕" android:backgroundTint="#10b981" android:textColor="white" />
+                    android:text="➕" android:backgroundTint="#10b981" android:textColor="@android:color/white" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -151,7 +151,7 @@
                             android:background="#252542" android:padding="4dp" android:layout_marginHorizontal="8dp" />
                     </LinearLayout>
                     <Button android:id="@+id/btnQuizStart" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="شروع مسابقه" android:backgroundTint="#3b82f6" android:textColor="white"
+                        android:text="شروع مسابقه" android:backgroundTint="#3b82f6" android:textColor="@android:color/white"
                         android:layout_marginTop="12dp" />
                 </LinearLayout>
 
@@ -178,10 +178,10 @@
                         android:layout_height="wrap_content" android:textSize="16sp" android:gravity="center"
                         android:layout_marginTop="12dp" android:visibility="gone" />
                     <Button android:id="@+id/btnQuizNext" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="سوال بعدی" android:backgroundTint="#3b82f6" android:textColor="white"
+                        android:text="سوال بعدی" android:backgroundTint="#3b82f6" android:textColor="@android:color/white"
                         android:layout_gravity="center" android:layout_marginTop="12dp" android:visibility="gone" />
                     <Button android:id="@+id/btnQuizRestart" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="مسابقه جدید" android:backgroundTint="#10b981" android:textColor="white"
+                        android:text="مسابقه جدید" android:backgroundTint="#10b981" android:textColor="@android:color/white"
                         android:layout_gravity="center" android:layout_marginTop="8dp" android:visibility="gone" />
                 </LinearLayout>
             </LinearLayout>
