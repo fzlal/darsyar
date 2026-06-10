@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_timer" android:icon="@drawable/ic_timer" android:title="مطالعه" />
+    <item android:id="@+id/nav_tasks" android:icon="@drawable/ic_tasks" android:title="وظایف" />
+    <item android:id="@+id/nav_quiz" android:icon="@drawable/ic_quiz" android:title="مسابقه" />
+    <item android:id="@+id/nav_stats" android:icon="@drawable/ic_stats" android:title="آمار" />
+    <item android:id="@+id/nav_music" android:icon="@drawable/ic_music" android:title="موزیک" />
+</menu>

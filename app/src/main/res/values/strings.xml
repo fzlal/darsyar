@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">مدیریت مطالعه</string>
+
+    <string-array name="priority_levels">
+        <item>بالا</item>
+        <item>متوسط</item>
+        <item>پایین</item>
+    </string-array>
+
+    <string-array name="quiz_difficulty">
+        <item>آسان</item>
+        <item>متوسط</item>
+        <item>سخت</item>
+    </string-array>
+</resources>
