@@ -3,11 +3,14 @@ package com.studyapp
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
+import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
 import kotlin.math.sin
 
-class CharacterView(context: Context) : View(context) {
+class CharacterView @JvmOverloads constructor(
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
+) : View(context, attrs, defStyleAttr) {
 
     var isStudying: Boolean = true
         set(v) { field = v; resetAnimations(); invalidate() }
