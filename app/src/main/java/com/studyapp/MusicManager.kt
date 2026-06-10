@@ -58,20 +58,22 @@ class MusicManager(private val context: Context) {
                 prepare()
                 fd.close()
                 start()
-                isPlaying = true
+                this@MusicManager.isPlaying = true
                 playlist[index].duration = duration / 1000
                 onSongChange?.invoke(playlist[index])
                 onPlayStateChange?.invoke(true)
 
                 setOnCompletionListener {
-                    isPlaying = false
-                    onPlayStateChange?.invoke(false)
-                    onCompletion?.invoke()
+                    this@MusicManager.isPlaying = false
+                    if (mediaPlayer == this) {
+                        onPlayStateChange?.invoke(false)
+                        onCompletion?.invoke()
+                    }
                 }
 
                 object : Thread() {
                     override fun run() {
-                        while (isPlaying && mediaPlayer != null) {
+                        while (this@MusicManager.isPlaying && mediaPlayer != null) {
                             try {
                                 val pos = mediaPlayer?.currentPosition ?: return
                                 val dur = mediaPlayer?.duration ?: return
@@ -86,7 +88,7 @@ class MusicManager(private val context: Context) {
             }
         } catch (_: Exception) {
             mediaPlayer = null
-            isPlaying = false
+            this@MusicManager.isPlaying = false
             onPlayStateChange?.invoke(false)
         }
     }

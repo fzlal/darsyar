@@ -271,7 +271,7 @@ class MainActivity : AppCompatActivity() {
         val tasks = storage.loadTasks()
         val rv = findViewById<RecyclerView>(R.id.taskList)
         rv.layoutManager = LinearLayoutManager(this)
-        taskAdapter = TaskAdapter(tasks, { id, done ->
+        taskAdapter = TaskAdapter(tasks.toMutableList(), { id, done ->
             val list = storage.loadTasks().toMutableList()
             list.replaceAll { if (it.id == id) it.copy(done = done) else it }
             storage.saveTasks(list)
@@ -400,7 +400,7 @@ class MainActivity : AppCompatActivity() {
         }
         // Apply custom background to options
         for (i in 0 until quizOptions.childCount) {
-            val v = quizOptions[i]
+            val v = quizOptions.getChildAt(i)
             val bg = android.graphics.drawable.GradientDrawable().apply {
                 setColor(0xFF252542.toInt())
                 cornerRadius = 12f
@@ -415,7 +415,7 @@ class MainActivity : AppCompatActivity() {
         quizState.answered = true
         val q = quizState.questionList[quizState.current]
         for (i in 0 until quizOptions.childCount) {
-            val btn = quizOptions[i] as Button
+            val btn = quizOptions.getChildAt(i) as Button
             btn.isEnabled = false
             val bg = btn.background as? android.graphics.drawable.GradientDrawable
             when {
@@ -614,33 +614,33 @@ class MainActivity : AppCompatActivity() {
         override fun onBindViewHolder(h: RecyclerView.ViewHolder, i: Int) {
             if (data.isEmpty()) return
             val s = data[i]
-            val vh = h as RecyclerView.ViewHolder
-            val subj = vh.itemView.findViewById<TextView>(android.R.id.text1) ?: return
-            val dur = vh.itemView.findViewById<TextView>(android.R.id.text2)
-            val del = vh.itemView.findViewById<ImageButton>(android.R.id.button1)
+            val subj = h.itemView.findViewById<TextView>(android.R.id.text1) ?: return
+            val dur = h.itemView.findViewById<TextView>(android.R.id.text2)
+            val del = h.itemView.findViewById<ImageButton>(android.R.id.button1)
             subj.text = s.subject
             dur?.text = "${s.durationSeconds / 3600}:${String.format("%02d", (s.durationSeconds % 3600) / 60)}:${String.format("%02d", s.durationSeconds % 60)}"
             del?.setOnClickListener { onDelete(s.id) }
         }
     }
 
+    inner class TaskVH(v: View) : RecyclerView.ViewHolder(v) {
+        val toggle: CheckBox = v.findViewById(android.R.id.checkbox)
+        val text: TextView = v.findViewById(android.R.id.text1)
+        val badge: TextView = v.findViewById(android.R.id.text2)
+        val del: ImageButton = v.findViewById(android.R.id.button1)
+    }
+
     inner class TaskAdapter(
         private val data: MutableList<StudyTask>,
         private val onToggle: (Long, Boolean) -> Unit,
         private val onDelete: (Long) -> Unit
-    ) : RecyclerView.Adapter<TaskAdapter.VH>() {
-        class VH(v: View) : RecyclerView.ViewHolder(v) {
-            val toggle: CheckBox = v.findViewById(android.R.id.checkbox)
-            val text: TextView = v.findViewById(android.R.id.text1)
-            val badge: TextView = v.findViewById(android.R.id.text2)
-            val del: ImageButton = v.findViewById(android.R.id.button1)
-        }
-        override fun onCreateViewHolder(p: ViewGroup, i: Int): VH {
+    ) : RecyclerView.Adapter<TaskVH>() {
+        override fun onCreateViewHolder(p: ViewGroup, i: Int): TaskVH {
             val v = layoutInflater.inflate(R.layout.item_task, p, false)
-            return VH(v)
+            return TaskVH(v)
         }
         override fun getItemCount() = data.size
-        override fun onBindViewHolder(h: VH, i: Int) {
+        override fun onBindViewHolder(h: TaskVH, i: Int) {
             val t = data[i]
             h.text.text = t.text
             h.text.paintFlags = if (t.done) android.graphics.Paint.STRIKE_THRU_TEXT_FLAG else 0
@@ -654,22 +654,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    inner class SongVH(v: View) : RecyclerView.ViewHolder(v) {
+        val title: TextView = v.findViewById(android.R.id.text1)
+        val artist: TextView = v.findViewById(android.R.id.text2)
+        val playing: View = v.findViewById(android.R.id.icon)
+    }
+
     inner class SongAdapter(
         private val data: List<Song>,
         private var currentIdx: Int,
         private val onPlay: (Int) -> Unit
-    ) : RecyclerView.Adapter<SongAdapter.VH>() {
-        class VH(v: View) : RecyclerView.ViewHolder(v) {
-            val title: TextView = v.findViewById(android.R.id.text1)
-            val artist: TextView = v.findViewById(android.R.id.text2)
-            val playing: View = v.findViewById(android.R.id.icon)
-        }
-        override fun onCreateViewHolder(p: ViewGroup, i: Int): VH {
+    ) : RecyclerView.Adapter<SongVH>() {
+        override fun onCreateViewHolder(p: ViewGroup, i: Int): SongVH {
             val v = layoutInflater.inflate(R.layout.item_song, p, false)
-            return VH(v)
+            return SongVH(v)
         }
         override fun getItemCount() = data.size
-        override fun onBindViewHolder(h: VH, i: Int) {
+        override fun onBindViewHolder(h: SongVH, i: Int) {
             val s = data[i]
             h.title.text = s.title
             h.artist.text = s.artist
