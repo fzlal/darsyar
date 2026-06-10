@@ -15,7 +15,6 @@ data class StudySession(
         put("durationSeconds", durationSeconds)
         put("date", date)
     }
-
     companion object {
         fun fromJson(obj: JSONObject): StudySession = StudySession(
             id = obj.getLong("id"),
@@ -38,7 +37,6 @@ data class StudyTask(
         put("priority", priority)
         put("done", done)
     }
-
     companion object {
         fun fromJson(obj: JSONObject): StudyTask = StudyTask(
             id = obj.getLong("id"),
@@ -59,7 +57,6 @@ data class QuizResult(
         put("total", total)
         put("date", date)
     }
-
     companion object {
         fun fromJson(obj: JSONObject): QuizResult = QuizResult(
             score = obj.getInt("score"),
@@ -68,16 +65,3 @@ data class QuizResult(
         )
     }
 }
-
-data class Song(
-    val title: String,
-    val artist: String,
-    val fileName: String,
-    var duration: Int = 0
-)
-
-data class QuizQuestion(
-    val question: String,
-    val options: List<String>,
-    val answerIndex: Int
-)

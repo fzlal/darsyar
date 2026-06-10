@@ -13,72 +13,56 @@
         android:layout_weight="1">
 
         <!-- ===== Page: Timer ===== -->
-        <ScrollView
-            android:id="@+id/pageTimer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <ScrollView android:id="@+id/pageTimer"
+            android:layout_width="match_parent" android:layout_height="match_parent"
             android:fillViewport="true">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical"
                 android:padding="16dp">
 
-                <com.studyapp.CharacterView
-                    android:id="@+id/characterView"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                <com.studyapp.CharacterView android:id="@+id/characterView"
+                    android:layout_width="match_parent" android:layout_height="250dp"
                     android:layout_marginBottom="12dp" />
 
-                <TextView
-                    android:id="@+id/timerDisplay"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="00:00:00"
-                    android:textSize="56sp"
-                    android:textColor="#a78bfa"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:letterSpacing="0.08"
-
+                <TextView android:id="@+id/timerDisplay"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="00:00:00" android:textSize="56sp"
+                    android:textColor="#a78bfa" android:textStyle="bold"
+                    android:gravity="center" android:letterSpacing="0.08"
                     android:layout_marginBottom="8dp" />
 
-                <EditText
-                    android:id="@+id/timerSubject"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                <EditText android:id="@+id/timerSubject"
+                    android:layout_width="match_parent" android:layout_height="48dp"
                     android:hint="عنوان جلسه مطالعه (اختیاری)"
-                    android:textColorHint="#6b7280"
-                    android:background="#252542"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:maxLength="50"
-                    android:textColor="#f1f5f9"
-                    android:textSize="14sp"
-                    android:inputType="text"
-                    android:layout_marginBottom="12dp" />
+                    android:textColorHint="#6b7280" android:background="#252542"
+                    android:gravity="center" android:padding="10dp" android:maxLength="50"
+                    android:textColor="#f1f5f9" android:textSize="14sp"
+                    android:inputType="text" android:layout_marginBottom="12dp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:gravity="center"
                     android:orientation="horizontal">
-                    <Button android:id="@+id/btnStart" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="شروع" android:backgroundTint="#10b981" android:textColor="@android:color/white"
-                        android:textSize="14sp" android:fontFamily="sans-serif" android:layout_margin="4dp" />
-                    <Button android:id="@+id/btnPause" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="توقف" android:backgroundTint="#f59e0b" android:textColor="#1a1a2e"
-                        android:textSize="14sp" android:fontFamily="sans-serif" android:layout_margin="4dp" />
-                    <Button android:id="@+id/btnStop" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="پایان" android:backgroundTint="#ef4444" android:textColor="@android:color/white"
-                        android:textSize="14sp" android:fontFamily="sans-serif" android:layout_margin="4dp" />
-                    <Button android:id="@+id/btnReset" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="Reset" android:backgroundTint="#6b7280" android:textColor="@android:color/white"
-                        android:textSize="14sp" android:fontFamily="sans-serif" android:layout_margin="4dp" />
+                    <Button android:id="@+id/btnStart" android:layout_width="wrap_content"
+                        android:layout_height="48dp" android:text="شروع"
+                        android:backgroundTint="#10b981" android:textColor="@android:color/white"
+                        android:textSize="14sp" android:layout_margin="4dp" />
+                    <Button android:id="@+id/btnPause" android:layout_width="wrap_content"
+                        android:layout_height="48dp" android:text="توقف"
+                        android:backgroundTint="#f59e0b" android:textColor="#1a1a2e"
+                        android:textSize="14sp" android:layout_margin="4dp" />
+                    <Button android:id="@+id/btnStop" android:layout_width="wrap_content"
+                        android:layout_height="48dp" android:text="پایان"
+                        android:backgroundTint="#ef4444" android:textColor="@android:color/white"
+                        android:textSize="14sp" android:layout_margin="4dp" />
+                    <Button android:id="@+id/btnReset" android:layout_width="wrap_content"
+                        android:layout_height="48dp" android:text="🔄 ریست"
+                        android:backgroundTint="#6b7280" android:textColor="@android:color/white"
+                        android:textSize="14sp" android:layout_margin="4dp" />
                 </LinearLayout>
 
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="جلسات امروز" android:textColor="#94a3b8" android:textSize="15sp"
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:text="جلسات امروز"
+                    android:textColor="#94a3b8" android:textSize="15sp"
                     android:layout_marginTop="20dp" android:layout_marginBottom="6dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -90,28 +74,26 @@
         </ScrollView>
 
         <!-- ===== Page: Tasks ===== -->
-        <LinearLayout
-            android:id="@+id/pageTasks"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            android:orientation="vertical"
+        <LinearLayout android:id="@+id/pageTasks"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:visibility="gone" android:orientation="vertical"
             android:padding="16dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="horizontal"
                 android:layout_marginBottom="12dp">
-                <EditText android:id="@+id/taskInput" android:layout_width="0dp" android:layout_height="48dp"
-                    android:layout_weight="1" android:hint="وظیفه جدید ..."
-                    android:textColorHint="#6b7280" android:background="#252542"
-                    android:padding="10dp" android:textColor="#f1f5f9" android:textSize="14sp"
+                <EditText android:id="@+id/taskInput" android:layout_width="0dp"
+                    android:layout_height="48dp" android:layout_weight="1"
+                    android:hint="وظیفه جدید ..." android:textColorHint="#6b7280"
+                    android:background="#252542" android:padding="10dp"
+                    android:textColor="#f1f5f9" android:textSize="14sp"
                     android:inputType="text" android:maxLength="100" />
-                <Spinner android:id="@+id/taskPriority" android:layout_width="90dp" android:layout_height="48dp"
-                    android:background="#252542" android:padding="4dp" android:layout_marginHorizontal="6dp" />
-                <Button android:id="@+id/btnAddTask" android:layout_width="wrap_content" android:layout_height="48dp"
-                    android:text="➕" android:backgroundTint="#10b981" android:textColor="@android:color/white" />
+                <Spinner android:id="@+id/taskPriority" android:layout_width="90dp"
+                    android:layout_height="48dp" android:background="#252542"
+                    android:padding="4dp" android:layout_marginHorizontal="6dp" />
+                <Button android:id="@+id/btnAddTask" android:layout_width="wrap_content"
+                    android:layout_height="48dp" android:text="➕"
+                    android:backgroundTint="#10b981" android:textColor="@android:color/white" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -120,211 +102,152 @@
                 android:layout_height="match_parent" />
         </LinearLayout>
 
-        <!-- ===== Page: Quiz ===== -->
-        <ScrollView
-            android:id="@+id/pageQuiz"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            android:fillViewport="true">
-            <LinearLayout
-                android:id="@+id/quizContent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <!-- Quiz Setup -->
-                <LinearLayout android:id="@+id/quizSetup"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:gravity="center">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="🏆 مسابقه درسی" android:textSize="22sp" android:textColor="#f1f5f9"
-                        android:textStyle="bold" android:layout_marginBottom="4dp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="تعداد سوالات خود را انتخاب کنید" android:textColor="#94a3b8"
-                        android:textSize="14sp" android:layout_marginBottom="16dp" />
-                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:orientation="horizontal" android:gravity="center">
-                        <NumberPicker android:id="@+id/quizCount" android:layout_width="80dp" android:layout_height="wrap_content" />
-                        <Spinner android:id="@+id/quizDifficulty" android:layout_width="120dp" android:layout_height="48dp"
-                            android:background="#252542" android:padding="4dp" android:layout_marginHorizontal="8dp" />
-                    </LinearLayout>
-                    <Button android:id="@+id/btnQuizStart" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="شروع مسابقه" android:backgroundTint="#3b82f6" android:textColor="@android:color/white"
-                        android:layout_marginTop="12dp" />
-                </LinearLayout>
-
-                <!-- Quiz Active -->
-                <LinearLayout android:id="@+id/quizActive"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:visibility="gone">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView android:id="@+id/quizProgress" android:layout_width="0dp" android:layout_height="wrap_content"
-                            android:layout_weight="1" android:text="سوال ۱ از ۵" android:textColor="#94a3b8"
-                            android:textSize="14sp" />
-                        <TextView android:id="@+id/quizScore" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="امتیاز: ۰" android:textColor="#a78bfa" android:textSize="14sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                    <TextView android:id="@+id/quizQuestion" android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:textSize="18sp" android:textColor="#f1f5f9"
-                        android:textStyle="bold" android:gravity="center" android:layout_marginVertical="20dp"
-                        android:lineSpacingExtra="6dp" />
-                    <LinearLayout android:id="@+id/quizOptions" android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:orientation="vertical" />
-                    <TextView android:id="@+id/quizResult" android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:textSize="16sp" android:gravity="center"
-                        android:layout_marginTop="12dp" android:visibility="gone" />
-                    <Button android:id="@+id/btnQuizNext" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="سوال بعدی" android:backgroundTint="#3b82f6" android:textColor="@android:color/white"
-                        android:layout_gravity="center" android:layout_marginTop="12dp" android:visibility="gone" />
-                    <Button android:id="@+id/btnQuizRestart" android:layout_width="wrap_content" android:layout_height="48dp"
-                        android:text="مسابقه جدید" android:backgroundTint="#10b981" android:textColor="@android:color/white"
-                        android:layout_gravity="center" android:layout_marginTop="8dp" android:visibility="gone" />
-                </LinearLayout>
-            </LinearLayout>
-        </ScrollView>
-
         <!-- ===== Page: Stats ===== -->
-        <LinearLayout
-            android:id="@+id/pageStats"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            android:orientation="vertical"
+        <LinearLayout android:id="@+id/pageStats"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:visibility="gone" android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="📊 آمار مطالعه" android:textSize="22sp" android:textColor="#f1f5f9"
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="📊 آمار مطالعه"
+                android:textSize="22sp" android:textColor="#f1f5f9"
                 android:textStyle="bold" android:layout_marginBottom="16dp" />
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:rowCount="3">
+            <GridLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:columnCount="2"
+                android:rowCount="2">
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:gravity="center"
-                    android:background="#252542" android:padding="16dp" android:layout_margin="4dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="مدت مطالعه امروز" android:textColor="#94a3b8" android:textSize="13sp" />
-                    <TextView android:id="@+id/statToday" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="۰ دقیقه" android:textColor="#a78bfa" android:textSize="22sp" android:textStyle="bold" />
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"
+                    android:gravity="center" android:background="#252542"
+                    android:padding="16dp" android:layout_margin="4dp">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="مدت مطالعه امروز"
+                        android:textColor="#94a3b8" android:textSize="13sp" />
+                    <TextView android:id="@+id/statToday"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="۰ دقیقه" android:textColor="#a78bfa"
+                        android:textSize="22sp" android:textStyle="bold" />
                 </LinearLayout>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:gravity="center"
-                    android:background="#252542" android:padding="16dp" android:layout_margin="4dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="مدت مطالعه کل" android:textColor="#94a3b8" android:textSize="13sp" />
-                    <TextView android:id="@+id/statTotal" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="۰ دقیقه" android:textColor="#a78bfa" android:textSize="22sp" android:textStyle="bold" />
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"
+                    android:gravity="center" android:background="#252542"
+                    android:padding="16dp" android:layout_margin="4dp">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="مدت مطالعه کل"
+                        android:textColor="#94a3b8" android:textSize="13sp" />
+                    <TextView android:id="@+id/statTotal"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="۰ دقیقه" android:textColor="#a78bfa"
+                        android:textSize="22sp" android:textStyle="bold" />
                 </LinearLayout>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:gravity="center"
-                    android:background="#252542" android:padding="16dp" android:layout_margin="4dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="جلسات امروز" android:textColor="#94a3b8" android:textSize="13sp" />
-                    <TextView android:id="@+id/statSessions" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="۰" android:textColor="#a78bfa" android:textSize="22sp" android:textStyle="bold" />
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"
+                    android:gravity="center" android:background="#252542"
+                    android:padding="16dp" android:layout_margin="4dp">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="جلسات امروز"
+                        android:textColor="#94a3b8" android:textSize="13sp" />
+                    <TextView android:id="@+id/statSessions"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="۰" android:textColor="#a78bfa"
+                        android:textSize="22sp" android:textStyle="bold" />
                 </LinearLayout>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:gravity="center"
-                    android:background="#252542" android:padding="16dp" android:layout_margin="4dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="وظایف انجام شده" android:textColor="#94a3b8" android:textSize="13sp" />
-                    <TextView android:id="@+id/statDone" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="۰" android:textColor="#a78bfa" android:textSize="22sp" android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:gravity="center"
-                    android:background="#252542" android:padding="16dp" android:layout_margin="4dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="بهترین امتیاز" android:textColor="#94a3b8" android:textSize="13sp" />
-                    <TextView android:id="@+id/statBest" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="۰" android:textColor="#a78bfa" android:textSize="22sp" android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:gravity="center"
-                    android:background="#252542" android:padding="16dp" android:layout_margin="4dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="میانگین امتیاز" android:textColor="#94a3b8" android:textSize="13sp" />
-                    <TextView android:id="@+id/statAvg" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="۰٪" android:textColor="#a78bfa" android:textSize="22sp" android:textStyle="bold" />
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"
+                    android:gravity="center" android:background="#252542"
+                    android:padding="16dp" android:layout_margin="4dp">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="وظایف انجام شده"
+                        android:textColor="#94a3b8" android:textSize="13sp" />
+                    <TextView android:id="@+id/statDone"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="۰" android:textColor="#a78bfa"
+                        android:textSize="22sp" android:textStyle="bold" />
                 </LinearLayout>
             </GridLayout>
         </LinearLayout>
 
         <!-- ===== Page: Music ===== -->
-        <LinearLayout
-            android:id="@+id/pageMusic"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            android:orientation="vertical"
+        <LinearLayout android:id="@+id/pageMusic"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:visibility="gone" android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="🎵 موزیک پلیر" android:textSize="22sp" android:textColor="#f1f5f9"
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="🎵 موزیک پلیر"
+                android:textSize="22sp" android:textColor="#f1f5f9"
                 android:textStyle="bold" android:layout_marginBottom="8dp" />
 
-            <!-- Now Playing -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:gravity="center" android:background="#252542"
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:gravity="center" android:background="#252542"
                 android:padding="20dp" android:layout_marginBottom="12dp">
 
-                <LinearLayout android:id="@+id/albumArt"
-                    android:layout_width="100dp" android:layout_height="100dp"
-                    android:gravity="center" android:background="#1a1a2e"
-                    android:layout_marginBottom="10dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="🎵" android:textSize="48sp" />
-                </LinearLayout>
+                <ImageView android:id="@+id/albumArt"
+                    android:layout_width="120dp" android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:background="#1a1a2e" android:layout_marginBottom="10dp" />
 
-                <TextView android:id="@+id/nowPlayingTitle" android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:text="هیچ آهنگی انتخاب نشده"
+                <TextView android:id="@+id/nowPlayingTitle"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="هیچ آهنگی انتخاب نشده"
                     android:textColor="#f1f5f9" android:textSize="16sp" android:textStyle="bold" />
-                <TextView android:id="@+id/nowPlayingArtist" android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:text="" android:textColor="#94a3b8"
-                    android:textSize="13sp" android:layout_marginBottom="10dp" />
+                <TextView android:id="@+id/nowPlayingArtist"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="" android:textColor="#94a3b8" android:textSize="13sp"
+                    android:layout_marginBottom="10dp" />
 
                 <SeekBar android:id="@+id/seekBar" android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:max="100" android:progress="0"
                     android:progressTint="#7c3aed" android:thumbTint="#a78bfa" />
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView android:id="@+id/currentTime" android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:text="00:00" android:textColor="#94a3b8"
-                        android:textSize="12sp" />
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:id="@+id/currentTime" android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="00:00" android:textColor="#94a3b8" android:textSize="12sp" />
                     <TextView android:id="@+id/totalTime" android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:text="00:00" android:textColor="#94a3b8"
-                        android:textSize="12sp" />
+                        android:layout_height="wrap_content" android:text="00:00"
+                        android:textColor="#94a3b8" android:textSize="12sp" />
                 </LinearLayout>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:gravity="center" android:layout_marginTop="6dp">
-                    <ImageButton android:id="@+id/btnPrev" android:layout_width="48dp" android:layout_height="48dp"
-                        android:src="@android:drawable/ic_media_previous" android:background="?selectableItemBackgroundBorderless"
-                        android:scaleType="center" />
-                    <ImageButton android:id="@+id/btnPlayPause" android:layout_width="56dp" android:layout_height="56dp"
-                        android:src="@android:drawable/ic_media_play" android:background="?selectableItemBackgroundBorderless"
-                        android:scaleType="center" />
-                    <ImageButton android:id="@+id/btnNext" android:layout_width="48dp" android:layout_height="48dp"
-                        android:src="@android:drawable/ic_media_next" android:background="?selectableItemBackgroundBorderless"
-                        android:scaleType="center" />
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:gravity="center"
+                    android:layout_marginTop="6dp">
+                    <ImageButton android:id="@+id/btnShuffle"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:src="@android:drawable/ic_menu_sort_by_size"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:scaleType="center" android:tint="#6b7280" />
+                    <ImageButton android:id="@+id/btnPrev"
+                        android:layout_width="48dp" android:layout_height="48dp"
+                        android:src="@android:drawable/ic_media_previous"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:scaleType="center" android:tint="#f1f5f9" />
+                    <ImageButton android:id="@+id/btnPlayPause"
+                        android:layout_width="56dp" android:layout_height="56dp"
+                        android:src="@android:drawable/ic_media_play"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:scaleType="center" android:tint="#f1f5f9" />
+                    <ImageButton android:id="@+id/btnNext"
+                        android:layout_width="48dp" android:layout_height="48dp"
+                        android:src="@android:drawable/ic_media_next"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:scaleType="center" android:tint="#f1f5f9" />
+                    <ImageButton android:id="@+id/btnRepeat"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:src="@android:drawable/ic_menu_revert"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:scaleType="center" android:tint="#6b7280" />
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Playlist -->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="📜 لیست آهنگ‌ها" android:textColor="#94a3b8" android:textSize="15sp"
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="📜 لیست آهنگ‌ها"
+                android:textColor="#94a3b8" android:textSize="15sp"
                 android:layout_marginBottom="6dp" />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/songList"
@@ -342,7 +265,6 @@
         app:menu="@menu/bottom_nav"
         app:itemIconTint="@color/bottom_nav_color"
         app:itemTextColor="@color/bottom_nav_color"
-        app:labelVisibilityMode="labeled"
-        app:itemRippleColor="#7c3aed" />
+        app:labelVisibilityMode="labeled" />
 
 </LinearLayout>
